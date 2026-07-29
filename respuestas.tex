@@ -1,0 +1,1056 @@
+\documentclass[12pt]{article}
+
+% =========================
+% PAQUETES BÁSICOS
+% =========================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{fontawesome5}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\geometry{margin=2.5cm}
+
+\pagestyle{fancy}
+\fancyhf{} % limpia encabezados y pies de página
+\rfoot{\thepage} % número de página abajo a la derecha
+\renewcommand{\headrulewidth}{0pt} % quita línea del encabezado
+% =========================
+% CONFIGURACIÓN DE CÓDIGO PYTHON
+% =========================
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{orange},
+    commentstyle=\color{gray},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=10pt,
+    frame=single,
+    breaklines=true,
+    showstringspaces=false,
+    tabsize=4
+}
+
+% =========================
+% COMANDOS PERSONALIZADOS
+% =========================
+\newcommand{\respuesta}{
+    \vspace{0.3cm}
+    \noindent\textbf{Respuesta:}
+    \vspace{0.2cm}
+}
+
+\newcommand{\espaciopararespuesta}{
+    \vspace{1.2cm}
+}
+
+\begin{document}
+
+% =========================
+% PORTADA / ENCABEZADO
+% =========================
+\begin{center}
+    {\LARGE Primera Tarea: Propedéutico de Python.}
+
+    \vspace{0.5cm}
+
+    {\large Realizada por: Juan Manuel Portillo López}
+\end{center}
+
+\vspace{1cm}
+
+\noindent
+A continuación, se presentan preguntas basadas en código Python introductorio. 
+Responda cada pregunta considerando el comportamiento del código.
+
+\vspace{0.8cm}
+
+% =========================
+% SECCIÓN 1
+% =========================
+\section*{Sección 1: Preguntas introductorias de Python}
+
+% =========================
+% EJERCICIO 1
+% =========================
+\subsection*{Ejercicio 1: ¡Hola Mundo!}
+
+Dado el siguiente código:
+
+\begin{lstlisting}
+print("Hola Mundo!")
+\end{lstlisting}
+
+¿Cuál es la salida esperada en la consola?
+
+\respuesta
+
+La salida esperada es:
+
+\begin{center}
+\texttt{Hola mundo!}
+\end{center}
+
+% =========================
+% EJERCICIO 2
+% =========================
+\subsection*{Ejercicio 2: Variables y Tipos de Datos}
+
+Considerando las siguientes asignaciones:
+
+\begin{lstlisting}
+mi_nombre = "Ana"
+edad = 30
+altura = 1.75
+is_estudiante = True
+\end{lstlisting}
+
+¿Qué tipo de dato corresponde a la variable \texttt{edad} y cuál a la variable \texttt{altura}?
+
+\respuesta
+
+\begin{itemize}
+    \item \texttt{edad} es de tipo entero (\texttt{int}).
+    \item \texttt{altura} es de tipo flotante (\texttt{float}).
+\end{itemize}
+
+
+% =========================
+% EJERCICIO 3
+% =========================
+\subsection*{Ejercicio 3: Variables y Comentarios}
+
+En el código de las variables, ¿qué propósito cumplen las líneas que comienzan con \texttt{\#}?
+
+\respuesta
+
+Las líneas que empiezan con \textbf{\#} son comentarios. Los comentarios se utilizan para escribir explicaciones sobre el código y su funcionamiento, o para dejar recordatorios para quien lea y le dé mantenimiento. Python las ignora a la hora de ejecutar el código.
+
+
+% =========================
+% EJERCICIO 4
+% =========================
+\subsection*{Ejercicio 4: Operaciones Aritméticas}
+
+Si ejecutamos el siguiente código:
+
+\begin{lstlisting}
+resultado_potencia = 2 ** 3
+resultado_modulo = 10 % 3
+
+print(resultado_potencia)
+print(resultado_modulo)
+\end{lstlisting}
+
+¿Cuáles serán las dos líneas de salida?
+
+\respuesta
+
+La salida esperada es:
+
+\begin{center}
+\texttt{8}
+
+\texttt{1}
+\end{center}
+
+
+% =========================
+% EJERCICIO 5
+% =========================
+\subsection*{Ejercicio 5: Operaciones con Cadenas}
+
+Dado el código:
+
+\begin{lstlisting}
+nombre = "Juan"
+apellido = "Perez"
+
+nombre_completo = nombre + " " + apellido
+
+print(nombre_completo)
+\end{lstlisting}
+
+¿Cuál será el valor final de la variable \texttt{nombre\_completo} y qué se imprimirá?
+
+\respuesta
+
+El valor final de \texttt{nombre\_completo} será: "Juan Pérez"
+
+Se imprimirá:
+
+\begin{center}
+\texttt{Juan Pérez}
+\end{center}
+
+
+% =========================
+% EJERCICIO 6
+% =========================
+\subsection*{Ejercicio 6: Listas: Acceso a Elementos}
+
+Si tenemos la lista:
+
+\begin{lstlisting}
+frutas = ["manzana", "banana", "cereza", "datil"]
+\end{lstlisting}
+
+Responda:
+
+\begin{enumerate}[label=\alph*)]
+    \item ¿Qué se imprime con \texttt{print("Primera fruta:", frutas[0])}?
+    \item ¿Qué se imprime con \texttt{print("Última fruta:", frutas[-1])}?
+\end{enumerate}
+
+\respuesta
+
+\begin{center}
+\texttt{Primera fruta: manzana}
+
+\texttt{Última fruta: dátil}
+\end{center}
+
+Esto será así por la manera en que Python accede a los elementos de una lista. La posición 0 es la posición del primer elemento (\textit{manzana}). Por lo tanto, si solicitamos el elemento en la posición -1, de manera circular tomará el elemento previo al primero; es decir, el último (\textit{dátil}).       
+
+
+% =========================
+% EJERCICIO 7
+% =========================
+\subsection*{Ejercicio 7: Listas: Modificación}
+
+Después de ejecutar:
+
+\begin{lstlisting}
+frutas = ["manzana", "banana", "cereza"]
+
+frutas.append("kiwi")
+frutas[1] = "arandano"
+
+print(frutas)
+\end{lstlisting}
+
+¿Cómo quedará la lista \texttt{frutas}?
+
+\respuesta
+\begin{center}
+\texttt{['manzana', 'arándano', 'cereza', 'kiwi']}
+\end{center}
+
+Esto será así por la manera en que Python accede a los elementos de una lista. Primero, usando la funcion \textit{.append} agrega el kiwi al final de la lista. Posteriormente, altera el contenido de la posición 1, el cual corresponde a la \textit{banana}, y lo cambia por \textit{arándano}. 
+
+% =========================
+% EJERCICIO 8
+% =========================
+\subsection*{Ejercicio 8: Estructuras de Control: Condicionales}
+
+Si \texttt{calificacion = 75}, ¿qué mensaje se imprimirá según el bloque \texttt{if/elif/else} proporcionado en el cuaderno?
+
+\respuesta
+
+El código proporcionado en el Notebook es:
+\begin{lstlisting}
+def ejercicio8():
+    calificacion = 75
+    if calificacion >= 90:
+        print("Tienes una A.")
+    elif calificacion >= 80:
+        print("Tienes una B.")
+    elif calificacion >= 70:
+        print("Tienes una C.")
+    else:
+        print("Tienes una D o F.") 
+\end{lstlisting}
+
+A partir de este código, si \texttt{calificacion = 75}, entonces se imprimirá:
+
+\begin{center}
+\texttt{Tienes una C.}
+\end{center}
+
+
+% =========================
+% EJERCICIO 9
+% =========================
+\subsection*{Ejercicio 9: Estructuras de Control: Operadores de Comparación}
+
+¿Cuál es la diferencia entre los operadores \texttt{==} y \texttt{=} en Python?
+
+\respuesta
+
+La diferencia es que el operador \texttt{=} sirve para asignar un valor a una variable, en este caso, asignar el valor 30 a la variable edad, mientras que el operador \texttt{==} sirve para comparar si dos valores son iguales
+
+Por ejemplo:
+
+\begin{lstlisting}[language=Python]
+edad = 30
+\end{lstlisting}
+
+En este caso, \texttt{=} da el valor \texttt{30} a la variable \texttt{edad}.
+
+En cambio:
+
+\begin{lstlisting}[language=Python]
+edad == 30
+\end{lstlisting}
+
+En este caso, compara si el valor asignado a la variable edad es igual a 30. La comparación entre los dos valores puede ser True o False. \\
+
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher
+
+\textbf{\textit{(Referencia random a la anécdota del extintor)}}
+
+
+% =========================
+% EJERCICIO 10
+% =========================
+\subsection*{Ejercicio 10: Bucle \texttt{for} con \texttt{range()}}
+
+¿Qué números imprimirá el siguiente bucle \texttt{for}?
+
+\begin{lstlisting}
+for i in range(5):
+    print(i)
+\end{lstlisting}
+
+\respuesta
+El resultado será una serie de número del 0 al 4. Esto porque range inicia a contar desde el valor 0.
+Así se verá la ejecución:
+\begin{center}
+\texttt{0}\\
+\texttt{1}\\
+\texttt{2}\\
+\texttt{3}\\
+\texttt{4}
+\end{center}
+
+\espaciopararespuesta
+
+% =========================
+% EJERCICIO 11
+% =========================
+\subsection*{Ejercicio 11: Bucle \texttt{for} con Listas}
+
+Si tenemos:
+
+\begin{lstlisting}
+frutas = ["manzana", "banana", "cereza"]
+\end{lstlisting}
+
+¿Qué imprimirá el siguiente bucle?
+
+\begin{lstlisting}
+for fruta in frutas:
+    print(fruta)
+\end{lstlisting}
+
+\respuesta
+
+Imprimirá los elementos de la lista \texttt{frutas}. Cada elemento lo imprimirá en un renglón diferente, ya que tras cada print se incluye un salto de línea. Quedará de la siguiente manera:
+\begin{center}
+\texttt{manzana}\\
+\texttt{banana}\\
+\texttt{cereza}
+\end{center}
+
+% =========================
+% EJERCICIO 12
+% =========================
+\subsection*{Ejercicio 12: Bucle \texttt{while}}
+
+¿Cuántas veces se ejecutará el cuerpo del bucle \texttt{while} en el siguiente código?
+
+\begin{lstlisting}
+contador = 0
+
+while contador < 3:
+    print("El contador es:", contador)
+    contador += 1
+\end{lstlisting}
+
+\respuesta
+
+El código imprimirá los números de manera sucesiva del 0 al 2. Es decir, realizará 3 impresiones. 
+Se verá de la siguiente manera:
+\begin{center}
+\texttt{El contador es: 0}\\
+\texttt{El contador es: 1}\\
+\texttt{El contador es: 2}
+\end{center}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.402\textwidth]{Imágenes/meme tarea1.jpeg}
+\end{figure}
+
+% =========================
+% EJERCICIO 13
+% =========================
+\subsection*{Ejercicio 13: Funciones: Definición y Llamada}
+
+Dado el código de la función \texttt{saludar(nombre)}:
+
+\begin{lstlisting}
+def saludar(nombre):
+    print("Hola,", nombre + "!")
+
+saludar("Carlos")
+\end{lstlisting}
+
+¿Qué se imprimirá en la consola al llamar a \texttt{saludar("Carlos")}?
+
+\respuesta
+
+Se imprimirá el siguiente mensaje:
+\begin{center}
+    \texttt{Hola, Carlos!}
+\end{center}
+
+
+% =========================
+% EJERCICIO 14
+% =========================
+\subsection*{Ejercicio 14: Funciones: Retorno de Valores}
+
+¿Cuál será el valor de la variable \texttt{resultado} después de la ejecución del siguiente código?
+
+\begin{lstlisting}
+def sumar(a, b):
+    return a * b
+
+resultado = sumar(10, 7)
+\end{lstlisting}
+
+\respuesta
+
+El valor de la variable será:
+\begin{center}
+    \texttt{70}
+\end{center}
+
+Esto es curioso ya que la función se llama \texttt{sumar}, sin embargo lo que está realizando es una multiplicación. 
+
+% =========================
+% SECCIÓN 2
+% =========================
+\section*{Sección 2: Ejercicios de implementación}
+
+Esta sección, en el documento de la tarea no venía dividida por números así que yo lo dividí en ejercicios 15, 16, 17 y 18. :3
+
+% =========================
+% EJERCICIO 15
+% =========================
+\subsection*{Ejercicio 15: Números primos}
+
+Sea $0 < N < 50$ un entero. Implementar una función que tome a $N$ como argumento y que imprima los $N$ primeros números primos.
+
+\subsubsection*{Ejemplo}
+
+Ante la ejecución de la función con $N = 5$, se imprimirá:
+
+\[
+2,\ 3,\ 5,\ 7,\ 11
+\]
+
+\respuesta
+
+En el código, primero solicito al usuario que ingrese un número entero entre 0 y 50. En caso de que ingrese un número fuera de ese rango, o que ingrese un caracter que no es entero, agregué un caso de manejo de excepción.
+
+En el caso donde se elije 0 o 1, la lista no incluye primos, así que imprimo un mensaje especial diciendo que en ese rango no hay números primos en lugar de imprimir una lista vacía.
+
+Para la realización del programa implementé dos funciones. Debido a que usé un mismo documento para programar los códigos de todos los ejercicios de la tarea como funciones (y otro para hacer pruebas llamando a éstas funciones), no dividí de manera modular el código de este ejercicio.
+\vspace{0.5cm}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imágenes/numeor no valido.png}
+    \caption{Caso donde el número está fuera de rango.}
+    \label{fig:numeor no valido}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imágenes/facas.png}
+    \caption{Caso donde se ingresa un tipo de dato no válido.}
+    \label{fig:facas}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imágenes/buuu.png}
+    \caption{Caso donde no hay números primos en ese rango (0,1).}
+    \label{fig:buuu}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imágenes/wii.png}
+    \caption{Caso donde sí hay números primos en ese rango.}
+    \label{fig:wii}
+\end{figure}
+\vspace{2 cm}
+
+\noindent\textbf{Código:}
+
+\begin{lstlisting}
+def ejercicio15():
+ 
+    # Funciones para verificar si un número es primo
+    def es_primo(num):
+        if num < 2:
+            return False
+        for i in range(2, int(num**0.5) + 1):
+            if num % i == 0:
+                return False
+        return True
+    
+    def listar_primos(N):
+        primos = []
+        if N >= 2:
+            for num in range(2, N + 1):
+                if es_primo(num):
+                    primos.append(num)
+        return primos
+    
+    # Solicitar al usuario un número N
+    while True:
+        N = input("Ingrese un número entre 0 y 50: ")
+
+        # Validación de entrada N
+        try:
+            N = int(N)
+            if N < 0 or N > 50:
+                print("Ese no es un número válido. >:c\nPor favor, ingresa uno entre 0 y 50.")
+                continue
+            break
+    
+        except ValueError:
+            print("Eso ni es número entero, no inventes compadre. >:c\nPor favor, ingresa un número entre 0 y 50.")
+            continue
+    
+    # Obtener y mostrar la lista de números primos
+    listaPrimos = listar_primos(N)
+    if len(listaPrimos) == 0:
+        print("No hay números primos en ese rango. buuuuuu :(")
+        return
+    else:
+        print("Los números primos entre 0 y", N, "son:", listaPrimos)
+
+\end{lstlisting}
+
+% =========================
+% EJERCICIO 16
+% =========================
+\subsection*{Ejercicio 16: Ordenamiento de una Cola}
+
+Ordene de forma ascendente una estructura de datos Cola, es decir, una estructura FIFO 
+(\textit{first in, first out}), la cual se asume que ya está implementada, de tipo de dato entero.
+
+El ordenamiento debe realizarse sin utilizar estructuras de datos adicionales, sólo la estructura original.
+
+Recordando que las operaciones básicas de una estructura de cola son las siguientes:
+
+\begin{itemize}
+    \item \texttt{push}: añadir.
+    \item \texttt{pop}: eliminar.
+    \item \texttt{front}: acceder al frente.
+    \item \texttt{empty}: verificar si está vacía.
+\end{itemize}
+
+\subsubsection*{Ejemplo}
+
+Entrada:
+
+\begin{lstlisting}
+push(30)
+push(-30)
+push(100)
+push(10)
+push(20)
+push(50)
+push(40)
+\end{lstlisting}
+
+Salida:
+
+\[
+-30\quad 10\quad 20\quad 30\quad 40\quad 50\quad 100
+\]
+
+\respuesta
+
+Para este ejercicio el método que elegí fue el del algoritmo Selection-Sort básicamente dividiendo el algoritmo en 2 listas, una ordenada y otra desordenada.
+
+En cada iteración se busca el elemento más pequeño dentro de la parte no ordenada de la cola.
+
+Luego se extrae de su lugar, se elimina temporalmente y se coloca al final de la cola. El proceso se repite hasta que el resto de elementos se ordena. No se usé otras estructuras de datos; solo algunas variables extras para el valor mínimo, su posición y contadores.
+
+
+
+Utilicé la siguiente secuencia de push():
+\begin{lstlisting}
+cola.push(89)
+cola.push(0)
+cola.push(1)
+cola.push(-11)
+cola.push(25)
+cola.push(43)
+cola.push(2)
+cola.push(8)
+cola.push(3)
+cola.push(5)
+cola.push(-13)
+\end{lstlisting}
+
+
+y el resultado fue:
+\begin{lstlisting}
+-13 -11 0 1 2 3 5 8 25 43 89 Achis achis 
+\end{lstlisting}
+\vspace{0.5cm}
+
+\noindent\textbf{Código:}
+
+\begin{lstlisting}
+def ejercicio16():
+    #
+    class Cola:
+        def __init__(self):
+            self.elementos = []
+
+        def push(self, posi_actual):
+            self.elementos.append(posi_actual)
+
+        def pop(self):
+            if not self.empty():
+                return self.elementos.pop(0)
+
+        def front(self):
+            if not self.empty():
+                return self.elementos[0]
+
+        def empty(self):
+            return len(self.elementos) == 0
+
+        def mostrar(self):
+            lista = []
+
+            for elemento in self.elementos:
+                lista.append(elemento)
+
+            print(lista, "Achis achis")
+    
+    def ordenamiento(cola, n):
+        for ordenados in range(n):
+
+            desordenados = n - ordenados
+
+            menor = None
+            posicionDelmenor = -1
+            
+    
+            for i in range(n):
+                posi_actual = cola.pop()
+
+                if i < desordenados:
+                    if menor is None or posi_actual < menor:
+                        menor = posi_actual
+                        posicionDelmenor = i
+
+                cola.push(posi_actual)
+
+            for i in range(n):
+                posi_actual = cola.pop()
+
+                if i != posicionDelmenor:
+                    cola.push(posi_actual)
+
+
+            cola.push(menor)
+          # Creamos una cola nueva para que no sea la misma del ejemplo del pdf     :v         
+    cola = Cola()
+    cola.push(89)
+    cola.push(0)
+    cola.push(1)
+    cola.push(-11)
+
+    cola.push(25)
+    cola.push(43)
+    cola.push(2)
+    cola.push(8)
+    cola.push(3)
+    cola.push(5)
+    cola.push(-13)
+
+    n = 11
+    ordenamiento(cola, n)
+    cola.mostrar()
+
+\end{lstlisting}
+
+% =========================
+% SECCIÓN 3
+% =========================
+\section*{Sección 3: Interpolación}
+
+Dado un conjunto de $n + 1$ puntos $(x_i, y_i)$ para $i = 0, 1, \dots, n$, tales que
+
+\[
+(x_i = x_j) \Rightarrow (i = j),
+\]
+
+existe un único polinomio de grado menor o igual a $n$ que pasa por dichos puntos.
+
+Si denotamos por $p_{i,j}(x)$ al único polinomio de grado menor o igual a $j-i$, que pasa por los puntos
+
+\[
+(x_k, y_k)
+\]
+
+para
+
+\[
+k = i, i+1, \dots, j,
+\]
+
+se puede mostrar que se cumplen las siguientes recurrencias:
+
+\[
+p_{i,i} = y_i, \qquad 0 \leq i \leq n
+\]
+
+\[
+p_{i,j}(x) =
+\frac{
+(x - x_j)p_{i,j-1}(x) - (x - x_i)p_{i+1,j}(x)
+}{
+x_i - x_j
+},
+\qquad 0 \leq i < j \leq n
+\]
+
+% =========================
+% EJERCICIO 17
+% =========================
+\subsection*{Ejercicio 17: Evaluación del polinomio interpolante}
+
+Utilice la recurrencia anterior para generar una función que reciba como parámetros los $n + 1$ puntos, así como un valor $t$ en donde se quiere evaluar el polinomio de grado $\leq n$ que pasa por los $n + 1$ puntos, y devuelva $p_{0,n}(t)$.
+
+\subsubsection*{Ejemplo}
+
+Si la función recibe los puntos $(0,1)$ y $(1,3)$, y $t = 2$, la función debe devolver el valor:
+
+\[
+5
+\]
+
+\respuesta
+Para realizar este ejercicio realicé un código interactivo que le solicita al usuario el número de puntos del polinomio interpolante. Para evitar casos demasiado extensos, limité el número de punto a mínimo 1, máximo 5. Cree un bloque de manejo de excepciones para evitar que falle el programa en caso de que el usuario introduzca un entero fuera de este rango, o bien, introduzca un caracter o valor diferente a entero. (Una disculpa por la funa al Tec en mi manejo de excepciones jej)
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imágenes/error_poli.png}
+    \caption{Manejo de excepciones en la entrada}
+    \label{fig:error_poli}
+\end{figure}
+
+Posteriormente se crea, a partir del número de puntos seleccionado, tabla que contenga los puntos (éstas las rellené con None en lo que el usuario introduce los valores de x y y. Luego a partir de la cantidad de puntos seleccionados, construí la tabla matricial correspondiente a Pij. 
+Luego se le piden al usuario las coordenadas de cada uno de los puntos y se verifica que NO se repitan los valores de (x), ya que de lo contrario no se podría construir adecuadamente el polinomio interpolante.. 
+Con estos datos, el programa va rellenando, una a una, las posiciones de la tabla Pij en función de la fórmula del método de interpolación hasta que se combinan todos los puntos necesarios y se llega a la evaluación final del polinomio en el punto deseado.
+
+Anexo una captura de pantalla de los resultadosen la terminal del VSC usando el ejemplo de (0,1), (1,3) y t=2:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Imágenes/corrida_mmm.png}
+    \caption{Ejecución del código}
+    \label{fig:corrida_mmm}
+\end{figure}
+
+Debido a que mi código permite elegir entre polinomios de 1 a 5 puntos, decidí implementar un ejemplo de la ejecución de mi código en donde el usuario elige hacerlo de 5 puntos.
+
+\textbf{Ejemplo con 5 puntos:}
+
+En este ejemplo se eligen los puntos: 
+\begin{itemize}
+    \item \texttt{P1=[0,0]}
+    \item \texttt{P2=[1,1]}
+    \item \texttt{P3=[2,4]}
+    \item \texttt{P4=[3,9]}
+    \item \texttt{P5=[4,16]}
+    \item \texttt{t = 7}
+\end{itemize}
+
+El resultado de este ejemplo debe ser:   \textbf{49}
+\vspace{4cm}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Imágenes/ejemplo_5puntos.png}
+    \caption{Ejemplo con 5 puntos}
+    \label{fig:ejemplo_5puntos}
+\end{figure}
+\noindent\textbf{Código:}
+
+\begin{lstlisting}
+#Este código corresponde a los ejercicios 17 y 18 de la tarea 1 del propedéutico de Siafi.    ^u^
+#Ejercicio 17 (Polinomio):
+from funciones_polinomios import *
+def ejercicio17():
+    n = None
+    while True:
+        try:
+            n = (int(input("Ingrese el número de puntos en el polinomio interpolante del Don Ramón (Mínimo: 1, Máximo: 5): ")))
+            if n < 1 or n > 5:
+                print("Número de puntos no válido, lee las instrucciones caray... Por favor, ingresa un número entre 1 y 5.")
+                continue
+            break
+        except ValueError:
+            print("Eso ni es número entero, no inventes compadre. Pareces del TEC. >:c\nPor favor, ingresa un número entre 1 y 5.")
+            continue
+
+    puntitos = [[None for j in range(2)] for i in range(n)]
+    
+    # for p in puntitos:
+    #     print(p)
+    
+    x_lista = [None] * n
+    y_lista = [None] * n  
+    print("\n***************************************************************************************************************************")
+    print("Vamos a ingresar los valores de x y y de los puntos. El valor de x no puede repetirse, así que ten cuidado con eso. >:c\n")
+    for i in range(n):
+        while True:
+            try:
+                print("Punto {}:".format(i+1))
+                x_lista [i] =   (int(input("Ingrese el valor de x para el punto {}: ".format(i+1))))
+                if x_lista[i] in x_lista[:i]:
+                    print("\nTE DIJE QUE NO LOS REPITIERAS!!!!. >:c\nPor favor, ingresa un número entre 1 y 5. :3")
+                    continue
+                y_lista [i] =   (int(input("Ingrese el valor de y para el punto {}: ".format(i+1))))
+                break
+            except ValueError:
+                print("Eso ni es número entero, no inventes compadre. Pareces del TEC. >:c\nPor favor, ingresa un número entre 1 y 5.\n")
+                continue
+    
+    for i in range(n):
+        puntitos[i][0] = x_lista[i]
+        puntitos[i][1] = y_lista[i]
+    
+    for p in puntitos:
+        print(p)
+
+    t = int(input("Ahora pon el valor donde quieres evaluar el polinomio:"))
+    tablita_Pij = [[None for j in range(n)] for i in range(n)]
+    for i in range(n):
+        tablita_Pij[i][i] = y_lista[i]
+    for tablita in tablita_Pij:
+        print(tablita)
+
+    #Formulita del pdf de Ramón: p_i,j(t) = [(t-x_j)p_i,j-1(t) - (t-x_i)p_i+1,j(t)] / (x_i-x_j)
+    for distancia in range(1, n):
+        for i in range(n - distancia):
+            j = i + distancia
+            tablita_Pij[i][j] = ((t - x_lista[j]) * tablita_Pij[i][j-1] - (t - x_lista[i]) * tablita_Pij[i+1][j]) / (x_lista[i] - x_lista[j])
+
+    print("\n*** SIAFI *** SIAFI *** SIAFI *** SIAFI *** SIAFI *** SIAFI *** SIAFI *** SIAFI *** \n\nTabla p_ij:")
+    for tablita in tablita_Pij:
+        print(tablita)
+    print("El resultado es: ", tablita_Pij[0][n-1])
+ejercicio17()
+\end{lstlisting}
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher \quad
+\faFireExtinguisher
+
+\textbf{\textit{(2da referencia random a la anécdota del extintor)}}
+% =========================
+% EJERCICIO 18
+% =========================
+\subsection*{Ejercicio 18: Obtención del polinomio interpolante}
+
+Utilice la recurrencia anterior para generar una función que reciba como parámetros los $n + 1$ puntos, y devuelva el polinomio $p_{0,n}(x)$.
+
+Indique claramente la estructura de datos que utilizará para almacenar el polinomio.
+\subsubsection*{Ejemplo}
+
+Si la función recibe los puntos $(0,1)$ y $(1,3)$, la función debe devolver el polinomio:
+
+\[
+p(x) = 2x + 1
+\]
+
+\respuesta
+Para este ejercicio aproveché el código que hice para el ejercicio 17 y simplemente le agregué lo necesario para construir el polinomio. Para esto agregué una segunda parte que permite, en vez de únicamente el valor evaluado, construir, además, la ecuación del polinomio interpolante formando operaciones entre polinomios para así crear lo que sería una expresión final más clara y legible para el usuario. Agregué unas funciones que imitan las operacioens de suma, resta y multiplicación entre polinomios y simplemente usé y operé con la misma fórmula de polinomio interpolante. El resultado me lo daba solo mostrándome entre corchetes los coeficientes del polinomio así que con otra función le agregué las x con el exponente. El código completo con los dos documentos (el principal y el de las funciones auxiliares) lo anexo a la entrega.
+
+De la misma manera que con el ejrcicio anterior, hice una ejecución tanto del ejemplo que viene en el pdf con 2 puntos, como del ejemplo de 5 puntos que mencioné anteriormente.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Imágenes/ej18_2puntos.png}
+    \caption{Ejemplo con 2 puntos}
+    \label{fig:ej18_2puntos}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Imágenes/ej18_5puntos.png}
+    \caption{Ejemplo con 5 puntos}
+    \label{fig:ej18_5puntos}
+\end{figure}
+\noindent\textbf{Estructura de datos propuesta para almacenar el polinomio:}
+
+Para estos dos ejercicios utilicé listas ya que éstas permiten el almacenamiento de varios valores de forma ordenada y se pueden acceder mediante índices. Me sirvieron para almacenar los valores de x, los valores de y, y también los puntos introducidos por el usuario y para crear las matrices para la interpolación.
+
+Para el ejercicio en el que obtengo la ecuación del polinomio, cada polinomio lo representé como una lista de coeficientes donde para cada posición  determina la potencia de x correspondiente. Por ejemplo: \[[1,2,3] = 1 + 2x + 2x^2\]
+
+Estuvo ricoo este problema, aprendí mucho 
+
+\noindent\textbf{Código:}
+
+\begin{lstlisting}
+#Este código corresponde a los ejercicios 17 y 18 de la tarea 1 del propedéutico de Siafi.    ^u^
+#Ejercicio 17 (Polinomio):
+from funciones_polinomios import *
+def ejercicio17():
+    n = None
+    while True:
+        try:
+            n = (int(input("Ingrese el número de puntos en el polinomio interpolante del Don Ramón (Mínimo: 1, Máximo: 5): ")))
+            if n < 1 or n > 5:
+                print("Número de puntos no válido, lee las instrucciones caray... Por favor, ingresa un número entre 1 y 5.")
+                continue
+            break
+        except ValueError:
+            print("Eso ni es número entero, no inventes compadre. Pareces del TEC. >:c\nPor favor, ingresa un número entre 1 y 5.")
+            continue
+
+    puntitos = [[None for j in range(2)] for i in range(n)]
+    
+    # for p in puntitos:
+    #     print(p)
+    
+    x_lista = [None] * n
+    y_lista = [None] * n  
+    print("\n***************************************************************************************************************************")
+    print("Vamos a ingresar los valores de x y y de los puntos. El valor de x no puede repetirse, así que ten cuidado con eso. >:c\n")
+    for i in range(n):
+        while True:
+            try:
+                print("Punto {}:".format(i+1))
+                x_lista [i] =   (int(input("Ingrese el valor de x para el punto {}: ".format(i+1))))
+                if x_lista[i] in x_lista[:i]:
+                    print("\nTE DIJE QUE NO LOS REPITIERAS!!!!. >:c\nPor favor, ingresa un número entre 1 y 5. :3")
+                    continue
+                y_lista [i] =   (int(input("Ingrese el valor de y para el punto {}: ".format(i+1))))
+                break
+            except ValueError:
+                print("Eso ni es número entero, no inventes compadre. Pareces del TEC. >:c\nPor favor, ingresa un número entre 1 y 5.\n")
+                continue
+    
+    for i in range(n):
+        puntitos[i][0] = x_lista[i]
+        puntitos[i][1] = y_lista[i]
+    
+    for p in puntitos:
+        print(p)
+
+    t = int(input("Ahora pon el valor donde quieres evaluar el polinomio:"))
+    tablita_Pij = [[None for j in range(n)] for i in range(n)]
+    for i in range(n):
+        tablita_Pij[i][i] = y_lista[i]
+    for tablita in tablita_Pij:
+        print(tablita)
+
+    #Formulita del pdf de Ramón: p_i,j(t) = [(t-x_j)p_i,j-1(t) - (t-x_i)p_i+1,j(t)] / (x_i-x_j)
+    for distancia in range(1, n):
+        for i in range(n - distancia):
+            j = i + distancia
+            tablita_Pij[i][j] = ((t - x_lista[j]) * tablita_Pij[i][j-1] - (t - x_lista[i]) * tablita_Pij[i+1][j]) / (x_lista[i] - x_lista[j])
+
+    print("\n*** SIAFI *** SIAFI *** SIAFI *** SIAFI *** SIAFI *** SIAFI *** SIAFI *** SIAFI *** \n\nTabla p_ij:")
+    for tablita in tablita_Pij:
+        print(tablita)
+    print("El resultado es: ", tablita_Pij[0][n-1])
+    
+    ########SIAFI####### Aquí ya es ejercicio 18: Generar el polinomio que describe a la función. #######SIAFI########
+    tablita_polinomitos = [[None for j in range(n)] for i in range(n)]
+    for i in range(n):
+        tablita_polinomitos[i][i] = [y_lista[i]]
+    
+    #Formulita del pdf de Ramón: p_i,j(x) = [(x-x_j)p_i,j-1(x) - (x-x_i)p_i+1,j(x)] / (x_i-x_j)
+    for distancia_polis in range(1, n):
+        for i in range(n - distancia_polis):
+            j = i + distancia_polis
+
+            parte1 = multiplicar_xMenos_valor(tablita_polinomitos[i][j - 1], x_lista[j])
+            parte2 = multiplicar_xMenos_valor(tablita_polinomitos[i + 1][j], x_lista[i])
+
+            numerador = restaPolinomios(parte1, parte2)
+            denominador = x_lista[i] - x_lista[j]
+
+            tablita_polinomitos[i][j] = multiplicacionConst(numerador, 1 / denominador)
+    
+    print("\n*** SIAFI *** SIAFI *** SIAFI *** SIAFI *** SIAFI *** SIAFI *** SIAFI *** SIAFI *** \n\nTabla de polinomios:")
+    for tablita_poli in tablita_polinomitos:
+        print(tablita_poli)
+    print("El resultado es: ", imprimirPolinomio(tablita_polinomitos[0][n-1]))
+
+ejercicio17()
+
+
+\end{lstlisting}
+
+\textbf{Comentarios finales:}
+
+Para la realización de esta tarea procuré construir mis propios algoritmos apoyándome de la IA como tutor personal, dándome recomendaciones y solucionando dudas puntuales de sintáxis. En el ejercicio 16 sí me aportó la estructura básica de algunas secciones del código. Para el ejercicio de los polinomios procuré realzarlo sin IA para hacer código, la utilicé para explicarme qué es un polinomio interpolante y resolver dudas de sintaxis (tuve muchas porque me la pasaba accidentalmente haciendo tuplas en vez de listas y ya luego no podía cambiar su contenido JAJA). La redacción del contenido de este documento es COMPLETAMENTE de mi autoría. Sin embargo, el código LATEX sí fue generado aproximadamente en un 80 por ciento por una IA, de lo contrario me habría tomado una eternidad escribirlo.  
+
+Muchas gracias por la tarea, estuvo pesadita pero aprendí mucho. :3
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Imágenes/DonRamon.png}
+    \caption{El líder de capacitación después de dar el prope:}
+    \label{fig:DonRamon}
+\end{figure}
+\vspace{0.5cm}
+\end{document}
